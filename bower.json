@@ -1,0 +1,24 @@
+{
+  "name": "angular-justified-layout",
+  "description": "Angularjs wrapper for Flickr Justified Layout",
+  "main": "index.html",
+  "authors": [
+    "codekraft-studio"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angularjs",
+    "directive",
+    "justified",
+    "layout",
+    "flickr"
+  ],
+  "homepage": "https://github.com/codekraft-studio/angular-justified-layout",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
