@@ -1,7 +1,7 @@
 {
   "name": "angular-justified-layout",
   "description": "Angularjs wrapper for Flickr Justified Layout",
-  "main": "index.html",
+  "main": "./dist/angular-justified-layout.js",
   "authors": [
     "codekraft-studio"
   ],
