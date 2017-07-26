@@ -148,6 +148,14 @@
             
           </div>
           
+          <button type="button" ng-init="hideView = false" ng-click="hideView = !hideView"></button>
+          
+          <div class="row" ng-show="hideView">
+            <div class="col-md-12">
+              <justified-layout items="defaultBoxes" options="defaultOptions"></justified-layout>
+            </div>
+          </div>
+          
         </section>
     </article>
 </body>
