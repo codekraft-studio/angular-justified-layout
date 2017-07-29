@@ -1,221 +1,249 @@
-<!DOCTYPE html><html ng-app="app"><head>    <meta charset="utf-8">    <title>AngularJs Justified Layoyt - codekraft studio</title>    <meta name="author" content="codekraft-studio">    <meta name="description" content="The passion for the code and opensource guides us in what we do.">    <meta name="Robots" content="ALL,INDEX">    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">    <meta name="mobile-web-app-capable" content="yes">    <meta property="og:title" content="Codekraft Studio, coding for fun and profit." />    <meta property="og:description" content="The passion for the code and opensource guides us in what we do." />    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/12395152" />    <meta property="og:type" content="website" />    <meta property="og:url" content="http://www.codekraft.it/" />    <meta property="og:site_name" content="Codekraft Studio, coding for fun and profit." />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Codekraft Studio, coding for fun and profit." />
-    <meta name="twitter:description" content="The passion for the code and opensource guides us in what we do." />
-    <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/12395152" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
-    <style>
-      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-        display: none !important;
-      }
-    </style>
-</head><body ng-controller="MainCtrl" ng-cloak>
-    <article>
-        <header>
-          <div class="container">
-            <h1>angular-justified-layout</h1>
-            <h2>angularjs wrapper for <strong>flickr justified layout</strong></h2>
-          </div>
-          <a href="https://github.com/codekraft-studio/angular-justified-layout"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
-        </header>        <section class="container">
-          
-          <div class="row">
-            
-            <div class="col-md-6">
-              
-              <div class="row title-bar">
-                
-                <div class="col-md-12">
-                  
-                  <h2>It's very simple to use!</h2>
-                  <p>There is only one directive called <b>justified-layout</b> you must pass to it an attribute called <b>items</b> which will be an array of rateo values or objects containing width and height, as described in: <a href="https://github.com/flickr/justified-layout">flickr/justified-layout</a></p>
-                  
-                </div>
-                
-              </div>
-              
-              <div class="row">
-                
-                <div class="col-md-12">
-                  
-                  <p>It can be used iwth an array of aspect rateos that will be converted into objects to use in the template:</p>
-                  
-                  <pre> &lt;justified-layout items="[1, 1.5 ,0.5, 1.2, 1]"&gt;&lt;/justified-layout&gt; </pre>
-                  
-                  <p>Or directly with an array of objects:</p>
-                  
-                  <pre> &lt;justified-layout items="myArray"&gt;&lt;/justified-layout&gt; </pre>
-                  
-                  <p>Note, if you want to use the array of objects option, each object inside <code>myArray</code> <b>must</b> contain theese properties:</p>
-                  
-                  <ul>
-                    <li><b>width</b>: The element (image, box, whatever) real width</li>
-                    <li><b>height</b>: The element (image, box, whatever) real height</li>
-                  </ul>
-                  
-                </div>
-                
-              </div>
-            
-            </div>
-            
-            <div class="col-md-6">
-                
-                <div class="row">
-                  
-                  <div class="col-md-10">
-                  
-                    <h2>Default template:</h2>
-                    
-                    <justified-layout items="defaultBoxes" options="defaultOptions"></justified-layout>
+<!DOCTYPE html>
+<html ng-app="app">
 
-                    <p>With a few lines of style and this module, this is what you get.</p>
-                    
-                  </div>
-                  
-                </div>
-                
-            </div>
-            
-          </div>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJs Justified Layoyt - codekraft studio</title>
+  <meta name="author" content="codekraft-studio">
+  <meta name="description" content="The passion for the code and opensource guides us in what we do.">
+  <meta name="Robots" content="ALL,INDEX">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta property="og:title" content="Codekraft Studio, coding for fun and profit." />
+  <meta property="og:description" content="The passion for the code and opensource guides us in what we do." />
+  <meta property="og:image" content="https://avatars2.githubusercontent.com/u/12395152" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.codekraft.it/" />
+  <meta property="og:site_name" content="Codekraft Studio, coding for fun and profit." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Codekraft Studio, coding for fun and profit." />
+  <meta name="twitter:description" content="The passion for the code and opensource guides us in what we do." />
+  <meta name="twitter:image" content="https://avatars2.githubusercontent.com/u/12395152" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  <style>
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+</head>
 
-          <div class="row">
-            
+<body ng-controller="MainCtrl" ng-cloak>
+
+  <article>
+
+    <header>
+      <div class="container">
+        <h1>angular-justified-layout</h1>
+        <h2>angularjs wrapper for <strong>flickr justified layout</strong></h2>
+      </div>
+      <a href="https://github.com/codekraft-studio/angular-justified-layout"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    </header>
+
+    <section class="container">
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <div class="row title-bar">
+
             <div class="col-md-12">
-              
-              <h2>Custom template</h2>
-              
-              <p>As you can see, you can use a custom template for your justified-layout, is also super easy to do it!</p>
-              
-              <p>The directive will accept transcluded content, if you want to access the directive scope, as per example, the items data, just call <code>$parent.items</code> in your template and you will have access to them!</p>
-              
+
+              <h2>It's very simple to use!</h2>
+              <p>There is only one directive called <b>justified-layout</b> you must pass to it an attribute called <b>items</b> which will be an array of rateo values or objects containing width and height, as described in: <a href="https://github.com/flickr/justified-layout">flickr/justified-layout</a></p>
+
             </div>
 
           </div>
-            
+
           <div class="row">
-            
-            <div class="col-md-8">
-              
-              <justified-layout items="images" options="{
+
+            <div class="col-md-12">
+
+              <p>It can be used iwth an array of aspect rateos that will be converted into objects to use in the template:</p>
+
+              <pre> &lt;justified-layout items="[1, 1.5 ,0.5, 1.2, 1]"&gt;&lt;/justified-layout&gt; </pre>
+
+              <p>Or directly with an array of objects:</p>
+
+              <pre> &lt;justified-layout items="myArray"&gt;&lt;/justified-layout&gt; </pre>
+
+              <p>Note, if you want to use the array of objects option, each object inside <code>myArray</code> <b>must</b> contain theese properties:</p>
+
+              <ul>
+                <li><b>width</b>: The element (image, box, whatever) real width</li>
+                <li><b>height</b>: The element (image, box, whatever) real height</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="row">
+
+            <div class="col-md-10">
+
+              <h2>Default template:</h2>
+
+              <justified-layout items="defaultBoxes" options="defaultOptions"></justified-layout>
+
+              <p>With a few lines of style and this module, this is what you get.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <h2>Custom template</h2>
+
+          <p>As you can see, you can use a custom template for your justified-layout, is also super easy to do it!</p>
+
+          <p>The directive will accept transcluded content, if you want to access the directive scope, as per example, the items data, just call <code>$parent.items</code> in your template and you will have access to them!</p>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-8">
+
+          <justified-layout items="images" options="{
           			containerPadding: 2,
           			boxSpacing: 5,
                 targetRowHeight: 120
               }">
-                
-                <div ng-repeat="image in $parent.items track by $index" class="box" ng-style="image.style">
-                  
-                  <div class="box-inside">
-                    <div class="details-block" ng-click="removeItem(image, $index)"></div>
-                  </div>
-                  
-                </div>
-                
-              </justified-layout>
-              
+
+            <div ng-repeat="image in $parent.items track by $index" class="box" ng-style="image.style">
+
+              <div class="box-inside">
+                <div class="details-block" ng-click="removeItem(image, $index)"></div>
+              </div>
+
             </div>
-            
-            <div class="col-md-4">
-              
-              <div class="btn-group-vertical">
-                <button type="button" class="btn btn-default btn-lg" ng-click="addImage()">
+
+          </justified-layout>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default btn-lg" ng-click="addImage()">
                   <span class="glyphicon glyphicon-plus"></span>
                   ADD BLOCK
                 </button>
-                
-                <button type="button" class="btn btn-default btn-lg" ng-click="randomize()">
+
+            <button type="button" class="btn btn-default btn-lg" ng-click="randomize()">
                   <span class="glyphicon glyphicon-refresh"></span>
                   RANDOMIZE
                 </button>
-                
-                <button type="button" class="btn btn-default btn-lg" ng-click="clearImages()">
+
+            <button type="button" class="btn btn-default btn-lg" ng-click="clearImages()">
                   <span class="glyphicon glyphicon-remove"></span>
                   CLEAR BLOCKS
                 </button>
-              </div>
-              
-            </div>
-            
           </div>
-          
-          <div class="row">
-            
-            <div class="col-md-12">
-              
-              <h2>Many thanks to Flickr for the aweome script!</h2>
-              
-              <p>All this has been made possible thanks to Flickr who has shared its magic code! If you are insterested visit <a href="http://code.flickr.net/2016/04/05/our-justified-layout-goes-open-source/" target="_blank">this</a> page.</p>
-              
-            </div>
-            
-          </div>
-          
-          <button type="button" ng-init="hideView = false" ng-click="hideView = !hideView"></button>
-          
-          <div class="row" ng-show="hideView">
-            <div class="col-md-12">
-              <justified-layout items="defaultBoxes" options="defaultOptions"></justified-layout>
-            </div>
-          </div>
-          
-        </section>
-    </article>
-</body>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <h2>Many thanks to Flickr for the aweome script!</h2>
+
+          <p>All this has been made possible thanks to Flickr who has shared its magic code! If you are insterested visit <a href="http://code.flickr.net/2016/04/05/our-justified-layout-goes-open-source/" target="_blank">this</a> page.</p>
+
+        </div>
+
+      </div>
+
+      <button type="button" ng-init="hideView = false" ng-click="hideView = !hideView"></button>
+
+      <div class="row" ng-show="hideView">
+        <div class="col-md-12">
+          <justified-layout items="defaultBoxes" options="defaultOptions"></justified-layout>
+        </div>
+      </div>
+
+    </section>
+
+  </article>
+
+</body>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script type="text/javascript" src="./dist/angular-justified-layout.min.js"></script>
 <script>
-  
   angular.module('app', ['angular-justified-layout'])
-  
-  .controller('MainCtrl', function($scope) {
-    
-    $scope.defaultOptions = {
-      targetRowHeight: 120
-    };
-    
-    $scope.defaultBoxes = [ 1, 1.5, 0.5, 2 ];
-    
-    $scope.images = [];
-    
-    $scope.clearImages = function() {
-      $scope.images = [];
-    };
-    
-    $scope.addImage = function(title) {
-      
-      var rateo = (Math.random() * (1.5 - 0.8) + 0.8).toFixed(2);
-      var width = Math.round(Math.random() * (1024 - 340) + 340);
-      var height = Math.round(rateo * width);
-      var url = ['https://placehold.it/', width, 'x', height].join('');
 
-      $scope.images.push({
-        height: height,
-        width: width,
-        url: url,
-        title: title
-      });
-      
-    }
-    
-    $scope.removeItem = function(item, index) {
-      $scope.images.splice(index, 1);
-    }
-    
-    $scope.randomize = function(number) {
-      number = !number ? (Math.random() * (16 - 6) + 6) : number;
+    .controller('MainCtrl', function($scope) {
+
+      $scope.defaultOptions = {
+        targetRowHeight: 120
+      };
+
+      $scope.defaultBoxes = [1, 1.5, 0.5, 2];
+
       $scope.images = [];
-      for (var i = 0; i < number; i++) {
-        var title = 'Image number: ' + i;
-        $scope.addImage( title );
+
+      $scope.clearImages = function() {
+        $scope.images = [];
+      };
+
+      $scope.addImage = function(title) {
+
+        var rateo = (Math.random() * (1.5 - 0.8) + 0.8).toFixed(2);
+        var width = Math.round(Math.random() * (1024 - 340) + 340);
+        var height = Math.round(rateo * width);
+        var url = ['https://placehold.it/', width, 'x', height].join('');
+
+        $scope.images.push({
+          height: height,
+          width: width,
+          url: url,
+          title: title
+        });
+
       }
-    }
-    
-    // Init view
-    $scope.randomize();
-  
-  });
-  
+
+      $scope.removeItem = function(item, index) {
+        $scope.images.splice(index, 1);
+      }
+
+      $scope.randomize = function(number) {
+        number = !number ? (Math.random() * (16 - 6) + 6) : number;
+        $scope.images = [];
+        for (var i = 0; i < number; i++) {
+          var title = 'Image number: ' + i;
+          $scope.addImage(title);
+        }
+      }
+
+      // Init view
+      $scope.randomize();
+
+    });
 </script>
+
 </html>
